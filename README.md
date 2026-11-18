@@ -24,13 +24,24 @@ relate --version
 
 ## Install
 
+One line (clones this repo into `~/.vibe/plugins/relate`):
+
 ```bash
-scripts/install.sh          # symlinks this repo to ~/.vibe/plugins/relate
+curl -LsSf https://raw.githubusercontent.com/relatedb/relate-mistral/main/scripts/bootstrap.sh | sh
+```
+
+Or manually:
+
+```bash
+git clone https://github.com/relatedb/relate-mistral ~/.vibe/plugins/relate
+# from a clone, for live development instead: scripts/install.sh  (symlinks into ~/.vibe/plugins/relate)
 ```
 
 Then in Vibe: `/reload-plugins` (or start a new session), and check
 `/plugins` (the `relate` plugin) and `/mcp` (the `relate` server with its
-three tools).
+three tools). For teams, commit `.vibe/plugins/relate` into the project repo —
+it loads in every trusted checkout. See `docs/publishing.md` for the full
+distribution story.
 
 `scripts/install.sh --project` installs into `<cwd>/.vibe/plugins/` instead
 (the folder must be trusted); `--copy` copies instead of symlinking.
