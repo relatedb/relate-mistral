@@ -129,3 +129,7 @@ validates the manifests, runs a live MCP stdio roundtrip
 - Vibe docs: https://docs.mistral.ai/vibe/code/overview
 - Plan and gap analysis (incl. the upstream `skill install` Vibe entry):
   `docs/integration-plan.md`
+- Mistral Studio (custom MCP connector over a live `relate serve --mcp PORT`):
+  `docs/studio.md`
+- Publishing/distribution: `docs/publishing.md` · project page:
+  https://relatedb.github.io/relate-mistral/
