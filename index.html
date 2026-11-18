@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relate × Mistral Vibe</title>
+<meta name="description" content="The relate plugin for Mistral Vibe: Cypher graph tools (read_cypher / write_cypher / get_schema) in every Vibe session, plus skills and an agent-memory pattern.">
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 3rem 1.25rem;
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: #0f1115; color: #e8eaf0;
+    display: flex; justify-content: center;
+  }
+  main { max-width: 44rem; }
+  h1 { font-size: 1.9rem; margin: 0 0 .25rem; }
+  h1 .x { color: #ff7a1a; }
+  .sub { color: #9aa3b2; margin-top: 0; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em; }
+  pre {
+    background: #171a21; border: 1px solid #262b36; border-radius: 8px;
+    padding: .9rem 1rem; overflow-x: auto;
+  }
+  pre code { color: #ffd9a8; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .3rem 0; }
+  a { color: #7ab8ff; }
+  .links { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid #262b36; }
+  footer { color: #6b7280; font-size: .85rem; margin-top: 2rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Relate <span class="x">×</span> Mistral Vibe</h1>
+  <p class="sub">Relate by Neo4j — an embedded, single-binary Cypher graph database — as a native Vibe plugin.</p>
+
+  <h2>Install</h2>
+  <pre><code># 1. the relate binary
+curl -sSfL https://relatedb.ai/install.sh | bash
+
+# 2. the plugin into ~/.vibe/plugins/relate
+curl -LsSf https://raw.githubusercontent.com/relatedb/relate-mistral/main/scripts/bootstrap.sh | sh</code></pre>
+  <p>Then in Vibe: <code>/reload-plugins</code> (or a new session), and check <code>/plugins</code> and <code>/mcp</code>.</p>
+
+  <h2>What a session gets</h2>
+  <ul>
+    <li><strong>MCP tools</strong> <code>mcp_relate.get_schema</code>, <code>mcp_relate.read_cypher</code>, <code>mcp_relate.write_cypher</code> — served by <code>relate serve --mcp stdio</code></li>
+    <li><strong>Skills</strong> <code>relate:relate</code> (CLI, Cypher, storage, safety) and <code>relate:relate-memory</code> (graph as agent memory)</li>
+    <li><strong>A session-start hook</strong> announcing Relate (fails open if the binary is missing)</li>
+  </ul>
+
+  <div class="links">
+    <a href="https://github.com/relatedb/relate-mistral">GitHub repo</a>
+    <a href="https://github.com/relatedb/relate-mistral/releases/tag/v0.1.0">Release v0.1.0</a>
+    <a href="https://github.com/relatedb/relate-mistral/blob/main/docs/integration-plan.md">Integration plan</a>
+    <a href="https://github.com/relatedb/relate-mistral/blob/main/docs/publishing.md">Publishing</a>
+    <a href="https://github.com/relatedb/relate">Relate</a>
+    <a href="https://relatedb.ai">relatedb.ai</a>
+    <a href="https://docs.mistral.ai/vibe/code/overview">Vibe docs</a>
+    <a href="https://github.com/relatedb/relate/issues/527">Upstream issue #527</a>
+  </div>
+
+  <footer>Apache-2.0 · Plugin support in Vibe is experimental — pin a release tag if you need stability.</footer>
+</main>
+</body>
+</html>
