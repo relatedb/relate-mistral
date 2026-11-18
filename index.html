@@ -51,10 +51,20 @@ curl -LsSf https://raw.githubusercontent.com/relatedb/relate-mistral/main/script
     <li><strong>A session-start hook</strong> announcing Relate (fails open if the binary is missing)</li>
   </ul>
 
+  <h2>Mistral Studio</h2>
+  <p>Studio plugs Relate in as a custom MCP <strong>connector</strong>: run one live server —
+  <code>relate serve --database ./graph --mcp 7475 --auth relate:$TOKEN</code> — behind a TLS
+  proxy, then register <code>https://graph.example.com/</code> at Studio → Context → Connectors
+  with a static <code>Authorization: Basic …</code> header. Tools <code>get_schema</code>,
+  <code>read_cypher</code>, <code>write_cypher</code> then work in conversations, agents and
+  workflows (and can be shared to Vibe per workspace).
+  Full recipe: <a href="https://github.com/relatedb/relate-mistral/blob/main/docs/studio.md">docs/studio.md</a>.</p>
+
   <div class="links">
     <a href="https://github.com/relatedb/relate-mistral">GitHub repo</a>
     <a href="https://github.com/relatedb/relate-mistral/releases/tag/v0.1.0">Release v0.1.0</a>
     <a href="https://github.com/relatedb/relate-mistral/blob/main/docs/integration-plan.md">Integration plan</a>
+    <a href="https://github.com/relatedb/relate-mistral/blob/main/docs/studio.md">Mistral Studio</a>
     <a href="https://github.com/relatedb/relate-mistral/blob/main/docs/publishing.md">Publishing</a>
     <a href="https://github.com/relatedb/relate">Relate</a>
     <a href="https://relatedb.ai">relatedb.ai</a>
