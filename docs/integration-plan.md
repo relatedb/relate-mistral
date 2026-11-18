@@ -111,7 +111,8 @@ and add the `[[mcp_servers]]` block from the README to `~/.vibe/config.toml`.
 
    (The struct has exactly four fields: `name`, `display_name`, `detect_dir`,
    `skills_dir`; tests in the same file assert the catalog length and order,
-   so the PR must update `catalog_has_eleven_entries_in_order`.) Until that
+   so the PR must update `catalog_has_eleven_entries_in_order`.) Filed
+   upstream as https://github.com/relatedb/relate/issues/527. Until that
    lands, path 5 above (`--agent cline` → `~/.agents/skills`, which Vibe also
    searches) works today.
 
