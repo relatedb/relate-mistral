@@ -1,0 +1,9 @@
+# Vibe extension hooks for the relate plugin.
+# Runs in the plugin root with PLUGIN_ROOT / PLUGIN_DATA set.
+
+[[hooks]]
+name = "relate-session-context"
+type = "session_start"
+command = "sh \"$PLUGIN_ROOT/scripts/session-context.sh\""
+timeout = 10.0
+description = "Tell the model that Relate (graph DB) and its mcp_relate.* tools are available."

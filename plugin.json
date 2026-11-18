@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "relate",
+  "version": "0.1.0",
+  "description": "Relate by Neo4j (embedded Cypher graph database, single binary) for Mistral Vibe: MCP tools read_cypher / write_cypher / get_schema over stdio, CLI guidance skills, and an agent-memory pattern.",
+  "author": {
+    "name": "relatedb",
+    "url": "https://github.com/relatedb/relate-mistral"
+  },
+  "homepage": "https://github.com/relatedb/relate-mistral",
+  "repository": "https://github.com/relatedb/relate-mistral",
+  "license": "Apache-2.0",
+  "keywords": ["neo4j", "relate", "graph", "cypher", "mcp", "agent-memory"],
+  "extensions": {
+    "ai.mistral.vibe": {
+      "schemaVersion": 1,
+      "displayName": "Relate by Neo4j",
+      "toolNamespace": "relate"
+    }
+  }
+}
