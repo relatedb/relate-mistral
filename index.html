@@ -31,6 +31,14 @@
     padding: .9rem 1rem; overflow-x: auto;
   }
   pre code { color: #ffd9a8; }
+  .prompt { position: relative; }
+  .prompt pre { white-space: pre-wrap; margin: .5rem 0 0; padding-right: 5rem; }
+  .prompt button {
+    position: absolute; top: .5rem; right: .5rem; cursor: pointer;
+    font: inherit; font-size: .8rem; color: #e8eaf0; background: #262b36;
+    border: 1px solid #343b4a; border-radius: 6px; padding: .2rem .6rem;
+  }
+  .prompt button:hover { background: #303746; }
   ul { padding-left: 1.2rem; }
   li { margin: .3rem 0; }
   a { color: #7ab8ff; }
@@ -46,6 +54,18 @@
 <main>
   <h1>Relate <span class="x">×</span> Mistral Vibe</h1>
   <p class="sub">Relate by Neo4j — an embedded, single-binary Cypher graph database — as a native Vibe plugin.</p>
+
+  <h2>Get started</h2>
+  <p>Paste this into Mistral Vibe to get started:</p>
+  <div class="prompt">
+    <pre id="starter"><code>Set up the Relate graph database plugin for me:
+1. Install the relate binary: curl -sSfL https://relatedb.ai/install.sh | bash
+2. Install the plugin: curl -LsSf https://raw.githubusercontent.com/relatedb/relate-mistral/main/scripts/bootstrap.sh | sh
+3. Tell me to run /reload-plugins, then wait for me.
+Once it's loaded, work out what I seem to be building from my current project (its name, folders, files and any data in it). Whatever the domain, its data has connections in it. Propose one or two graphs that capture the most useful relationships in my domain, as a sketch of the nodes and relationships. Show a few example Cypher queries that would answer real questions about it. Don't create any data yet: ask which one I'd like to try.</code></pre>
+    <button type="button" id="copy">Copy</button>
+  </div>
+  <p>Prefer to do it yourself? The manual steps are below.</p>
 
   <h2>Install</h2>
   <pre><code># 1. the relate binary
@@ -85,5 +105,13 @@ curl -LsSf https://raw.githubusercontent.com/relatedb/relate-mistral/main/script
 
   <footer>Apache-2.0 · Plugin support in Vibe is experimental — pin a release tag if you need stability.</footer>
 </main>
+<script>
+  document.getElementById('copy').addEventListener('click', function (e) {
+    var b = e.currentTarget;
+    navigator.clipboard.writeText(document.getElementById('starter').innerText).then(function () {
+      b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500);
+    }, function () { b.textContent = 'Press Ctrl/Cmd+C'; });
+  });
+</script>
 </body>
 </html>
