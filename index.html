@@ -5,16 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Relate × Mistral Vibe</title>
 <meta name="description" content="The relate plugin for Mistral Vibe: Cypher graph tools (read_cypher / write_cypher / get_schema) in every Vibe session, plus skills and an agent-memory pattern.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Relate × Mistral Vibe">
+<meta property="og:description" content="Relate by Neo4j as a native Vibe plugin: Cypher graph tools, skills and agent memory.">
+<meta property="og:image" content="https://relatedb.github.io/relate-mistral/assets/social-card.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root { color-scheme: light dark; }
   * { box-sizing: border-box; }
   body {
-    margin: 0; padding: 3rem 1.25rem;
+    margin: 0; padding: 0 0 3rem;
     font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
     background: #0f1115; color: #e8eaf0;
-    display: flex; justify-content: center;
+    display: flex; flex-direction: column; align-items: center;
   }
-  main { max-width: 44rem; }
+  .hero { width: 100%; background: #0f1115; border-bottom: 4px solid #ffd200; }
+  .hero img { display: block; width: 100%; max-width: 1280px; height: auto; margin: 0 auto; }
+  main { max-width: 44rem; padding: 2rem 1.25rem 0; }
   h1 { font-size: 1.9rem; margin: 0 0 .25rem; }
   h1 .x { color: #ff7a1a; }
   .sub { color: #9aa3b2; margin-top: 0; }
@@ -32,6 +39,10 @@
 </style>
 </head>
 <body>
+<div class="hero">
+  <img src="assets/hero.png" width="1280" height="410"
+       alt="Le Chonk, a green-and-blue blob, types on a laptop on a London Underground platform, with a graph node, heart and Mistral logo on the wall behind, while Archie, a pixel-art orange cat, naps on a bench.">
+</div>
 <main>
   <h1>Relate <span class="x">×</span> Mistral Vibe</h1>
   <p class="sub">Relate by Neo4j — an embedded, single-binary Cypher graph database — as a native Vibe plugin.</p>
