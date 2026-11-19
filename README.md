@@ -15,6 +15,20 @@ gives every Vibe session:
 - **A session-start hook** that tells the model Relate is available and which
   tools/skills to use (`ai.mistral.vibe/hooks.toml`)
 
+## Get started
+
+Paste this into Mistral Vibe to get started:
+
+```text
+Set up the Relate graph database plugin for me:
+1. Install the relate binary: curl -sSfL https://relatedb.ai/install.sh | bash
+2. Install the plugin: curl -LsSf https://raw.githubusercontent.com/relatedb/relate-mistral/main/scripts/bootstrap.sh | sh
+3. Tell me to run /reload-plugins, then wait for me.
+Once it's loaded, work out what I seem to be building from my current project (its name, folders, files and any data in it). Whatever the domain, its data has connections in it. Propose one or two graphs that capture the most useful relationships in my domain, as a sketch of the nodes and relationships. Show a few example Cypher queries that would answer real questions about it. Don't create any data yet: ask which one I'd like to try.
+```
+
+Prefer to do it yourself? The manual steps follow.
+
 ## Prerequisites
 
 ```bash
